@@ -1,0 +1,22 @@
+PImage a;
+int n = 12;
+drop[] d;
+
+void setup() {
+  size(640, 427);
+  a = loadImage("autumn.jpeg");
+  d = new drop[n];
+  for(int i = 0; i < d.length; i ++) {
+    d[i] = new drop(random(width), random(-20, 10), random(4));
+  }
+  
+}
+
+void draw() {
+  background (a);
+  for(int i = 0; i < d.length; i ++) {
+    d[i].show();
+    d[i].update();
+  }
+  
+}
